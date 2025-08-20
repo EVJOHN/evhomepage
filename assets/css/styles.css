@@ -75,12 +75,104 @@ body {
     z-index: 1000;
 }
 
+/* 导航栏样式 */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 语言选择器样式 */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.lang-link {
+    color: #002FA7;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.lang-link:hover {
+    background-color: rgba(0, 47, 167, 0.1);
+    text-decoration: none;
+}
+
+.lang-link.current {
+    background-color: #002FA7;
+    color: white;
+}
+
+/* 响应式设计 - 移动端 */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .language-selector {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .lang-link {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+.nav-title {
+    color: #002FA7;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.nav-title:hover {
+    color: #0044E9;
+}
+
+.nav-back {
+    color: #002FA7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-back:hover {
+    text-decoration: underline;
+}
+
 /* 页面容器最大宽度为1200px，居中显示，内边距为4rem 2rem，淡入动画效果 */
 .page-container {
-    max-width: 1200px; /* 最大宽度为1200px */
-    margin: 0 auto; /* 水平居中 */
-    padding: 4rem 2rem; /* 内边距为4rem 2rem */
-    animation: fadeIn 0.8s ease-out; /* 淡入动画效果，持续时间为0.8秒，缓动函数为ease-out */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 6rem;
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* 标题文本居中，底部间距为4rem，相对定位 */
@@ -92,10 +184,13 @@ body {
 
 /* 省份部分标题和城市列表 */
 .section-container {
-    background-color: rgba(255, 255, 255, 0.263); /* 背景颜色半透明的白色 */
-    border-radius: 1rem; /* 边框圆角为1rem */
-    padding: 2rem; /* 内边距为2rem */
-    margin-bottom: 2rem; /* 底部间距为2rem */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 城市链接 */
@@ -129,7 +224,7 @@ body {
 .image {
     width: 100%; /* 设置头像图片的宽度为容器宽度 */
     height: 100%; /* 设置头像图片的高度为容器高度 */
-    border-radius: 90%; /* 圆形头像 */
+    border-radius: 50%; /* 圆形头像 */
     background-size: cover; /* 确保图片覆盖整个容器 */
     background-position: center; /* 确保图片在容器中居中 */
     background-repeat: no-repeat; /* 防止图片重复 */
